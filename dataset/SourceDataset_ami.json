@@ -1,0 +1,92 @@
+{
+	"name": "SourceDataset_ami",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "FamilyAndersen.json",
+				"container": "cosmosdb"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"parents": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"relationship": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"children": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"gender": {
+								"type": "string"
+							},
+							"grade": {
+								"type": "integer"
+							},
+							"pets": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"givenName": {
+											"type": "string"
+										},
+										"type": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"location": {
+					"type": "object",
+					"properties": {
+						"state": {
+							"type": "string"
+						},
+						"county": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						}
+					}
+				},
+				"isRegistered": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

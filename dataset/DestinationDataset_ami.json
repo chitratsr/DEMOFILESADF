@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_ami",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "family"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
